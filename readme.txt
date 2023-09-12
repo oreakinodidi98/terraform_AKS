@@ -16,3 +16,8 @@ mkdir .github/workflows
 
 rename backend file and to gitignore file to remove from state
 mv backend.tf backend_local.tf
+
+# terraform cloud integration -> connect to GH account 
+
+terraform init
+terraform apply -var=gh_pat=$GITHUB_TKEN" -var="organization=terraform_AKS"

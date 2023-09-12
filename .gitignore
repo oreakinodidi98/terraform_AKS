@@ -2,8 +2,8 @@
 .terraform/
 # .tfstate files
 *.tfstate
-# .tfvars files 
-*.tfvars
+# # .tfvars files 
+# *.tfvars
 # .tfplan files
 *.tfplan
 # ignore any backup files
