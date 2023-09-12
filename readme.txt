@@ -1,4 +1,4 @@
-Github token :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
+
 $env:GITHUB_TOKEN="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"
 git init --initial-branch=main
 git add README.md
