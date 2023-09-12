@@ -165,7 +165,7 @@ resource "azurerm_private_endpoint" "privateendpoint" {
     name                           = "${var.naming_prefix}privateserviceconnection"
     private_connection_resource_id = azurerm_kubernetes_cluster.akscluster.id
     subresource_names              = ["kube-apiserver"]
-    is_manual_connection = false
+    is_manual_connection           = false
   }
 }
 # user assigned identity in azure
