@@ -8,3 +8,11 @@ git remote add origin https://github.com/oreakinodidi98/terraform_AKS.git
 git push -u origin main
 git rm terraform.tfstate
 git rm terraform.tfstate.backup
+
+# create a github directory 
+mkdir .github
+# create a github workflow directory 
+mkdir .github/workflows
+
+rename backend file and to gitignore file to remove from state
+mv backend.tf backend_local.tf

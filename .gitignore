@@ -7,9 +7,11 @@
 # .tfplan files
 *.tfplan
 # ignore any backup files
-#*.tfstate.backup
-#!terraform.tfstate
 *.tfstate
 *.tfstate.backup
 # ignore any lock files 
 .terraform.lock.hcl
+# ignore.pem files
+*.pem
+# ignore any backend files
+backend_local.tf

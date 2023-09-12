@@ -1,0 +1,46 @@
+# yaml file for github actions 
+#name of the action
+name: 'terraform'
+# even that will trigger it 
+on:
+  push:
+    branches:
+      - master
+
+env:
+    ARM_CLIENT_ID: 54eb7456-b767-487c-80ef-e79d0f13694c
+    ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+    ARM_SUBSCRIPTION_ID: cb5b077c-3ef5-4b2e-83e5-490cc5ca0e19
+    ARM_TENANT_ID: 16b3c013-d300-468d-ac64-7eda0820b6d3
+    TF_LOG: INFO
+    TF_INPUT: false
+#jobs that will be run as part of the action
+jobs:
+    terraform:
+        name: 'Terraform'
+        runs-on: ubuntu-latest
+
+        defaults:
+            run:
+               shell: bash
+        
+        steps:
+        #clone repository to runner machine 
+        - name: Checkout
+          uses: actions/checkout@v3
+        # install terraform action using latest version of terraform 
+        - name: Setup Terraform
+          uses: hashicorp/setup-terraform@v1
+        #initialise terraform
+        - name: Terraform Init
+          id: init
+          run: terraform init
+        # run terraform fmt command 
+        - name: Terraform fmt
+          id: fmt
+          run: terraform fmt -check
+        # run terraform validate command, this will run regardless of the previous step
+        - name: Terraform validate
+          id: validate
+          if: (success() || failure())
+          run: terraform validate
