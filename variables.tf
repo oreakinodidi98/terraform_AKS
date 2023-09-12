@@ -40,7 +40,7 @@ variable "enviroment" {
   type        = string
   default     = "dev"
 }
-variable "vnets" {
-  description = "value to be added as vnets, it is a list data type and default value is empty"
-  type        = list(map(any))
-}
+# variable "vnets" {
+#   description = "value to be added as vnets, it is a list data type and default value is empty"
+#   type        = list(map(any))
+# }
