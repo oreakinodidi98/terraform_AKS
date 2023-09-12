@@ -8,6 +8,8 @@
 *.tfplan
 # ignore any backup files
 #*.tfstate.backup
-!terraform.tfstate
+#!terraform.tfstate
+*.tfstate
+*.tfstate.backup
 # ignore any lock files 
 .terraform.lock.hcl
