@@ -2,10 +2,7 @@
 #name of the action
 name: 'terraform'
 # even that will trigger it 
-on:
-  push:
-    branches:
-      - master
+on: push
 
 env:
     ARM_CLIENT_ID: 54eb7456-b767-487c-80ef-e79d0f13694c
