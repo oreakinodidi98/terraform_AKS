@@ -1,0 +1,12 @@
+# local .terraform directories
+.terraform/
+# .tfstate files
+*.tfstate
+# .tfvars files 
+*.tfvars
+# .tfplan files
+*.tfplan
+# ignore any backup files
+*.tfstate.backup
+# ignore any lock files 
+*.terraform.lock.hcl
